@@ -10,6 +10,11 @@ return (
             <Logo src ={logo} alt='Logo'/>
             <NavLink className='signIn-btn' to='/'>Sign In</NavLink>
         </div>
+        <div className='header-content'>
+            <Title>See what's next</Title>
+            <Subtitle>WATCH ANYWHERE. CANCEL ANYTIME</Subtitle>
+            <button>TRY IT NOW</button>
+        </div>
 
     </HeaderComponent>
 )
@@ -54,3 +59,22 @@ const HeaderComponent = styled.div`
         z-index: 1;
     }
 `
+//Main Title
+
+const Title = styled.h2`
+    margin: 0 0 1.2rem;
+    font-size: 5rem;
+    font-weight: 700;
+    line-height: 1.1em
+`;
+
+//Subtitle
+const Subtitle = styled.h3`
+    font-weight: 400;
+    font-size: 1.875rem;
+    line-height: 1.25em;
+    margin: 0 0 1.875rem
+    text-transform: uppercase
+
+
+`;
