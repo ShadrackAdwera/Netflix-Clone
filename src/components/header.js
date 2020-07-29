@@ -2,6 +2,9 @@ import React from 'react'
 import logo from '../svg/logo.svg'
 import { NavLink, Link } from 'react-router-dom'
 import styled from 'styled-components'
+import { Icon } from 'react-icons-kit'
+import {ic_chevron_right} from 'react-icons-kit/md/ic_chevron_right'
+
 
 const Header = props => {
 return (
@@ -13,7 +16,7 @@ return (
         <div className='header-content'>
             <Title>See what's next</Title>
             <Subtitle>WATCH ANYWHERE. CANCEL ANYTIME</Subtitle>
-            <Link className='main-offer-btn' to='/'>TRY IT NOW</Link>
+            <Link className='main-offer-btn' to='/'>TRY IT NOW <Icon className='Icon' icon={ic_chevron_right} size={40}/> </Link>
         </div>
 
     </HeaderComponent>
@@ -77,15 +80,21 @@ const HeaderComponent = styled.div`
         text-transform: uppercase;
         border: none;
         outline: none;
-        margin: 0 33%;
+        margin: 0 35%;
         padding: 1.5rem;
         border-radius: 0.1875rem;
         font-size: 2rem;
         text-align: center;
         box-shadow: 0 1px 0 rgba(0,0,0,0.45);
         transition: background 0.3s ease-in;
-        cursor: ponter
-
+        cursor: ponter;
+        &:hover {
+            background: var(--main-dark)
+        }
+    }
+    .Icon svg {
+        vertical-align: bottom;
+        margin-left: 1.5rem
     }
 `
 
