@@ -1,6 +1,8 @@
 import React from 'react';
 import { Tab, Tabs, TabList } from 'react-tabs';
 import ImageDoor from '../components/tabs-navigation/tab-door'
+import DeviceImage from '../components/tabs-navigation/tab-devices'
+import PriceImage from '../components/tabs-navigation/tab-price'
 import '../styles/TabsNav.css'
 
 const TabsComponent = (props) => {
@@ -9,8 +11,8 @@ const TabsComponent = (props) => {
       <Tabs>
         <TabList>
           <Tab><ImageDoor/></Tab>
-          <Tab>Title 2</Tab>
-          <Tab>Title 3</Tab>
+          <Tab><DeviceImage/></Tab>
+          <Tab><PriceImage/></Tab>
         </TabList>
       </Tabs>
     </div>
