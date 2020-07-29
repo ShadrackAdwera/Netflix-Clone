@@ -15,3 +15,14 @@
     height: 4.375rem;
     fill: var(--main-grey);
 }
+.tabs {
+    padding-top: 1rem;
+}
+.tab-nav-container {
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    text-align: center;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 1rem;
+}
