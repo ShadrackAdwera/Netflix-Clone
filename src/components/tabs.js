@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
-import { Tab, Tabs, TabList } from 'react-tabs';
+import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import ImageDoor from '../components/tabs-navigation/tab-door';
 import DeviceImage from '../components/tabs-navigation/tab-devices';
 import PriceImage from '../components/tabs-navigation/tab-price';
+import TabContentOne from '../components/tab-content/tab-content-one'
 import '../styles/TabsNav.css';
 
 const TabsComponent = (props) => {
@@ -27,6 +28,9 @@ const TabsComponent = (props) => {
             <p><strong>Pick Your Price</strong></p>
           </Tab>
         </TabList>
+        <TabPanel>
+            <TabContentOne/>
+        </TabPanel>
       </Tabs>
     </div>
   );
