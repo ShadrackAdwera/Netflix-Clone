@@ -47,4 +47,10 @@ const HeaderComponent = styled.div`
         background: var(--main-dark)
     }
 }
+//headertop
+    .header-top {
+        position: relative;
+        height: 10rem;
+        z-index: 1;
+    }
 `
