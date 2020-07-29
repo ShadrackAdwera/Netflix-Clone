@@ -25,4 +25,25 @@
     text-align: center;
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 1rem;
+    list-style: none;
+    color: var(--main-grey);
+    margin: 0 12%;
 }
+
+/* hover effect on the tab navs */
+
+ul li:hover {
+    color: white;
+    cursor: pointer;
+}
+
+ul li:hover svg path {
+    fill: white;
+}
+
+/* color on the active nav */
+.active {
+    border-bottom: 4px solid var(--main-red);
+}
+
+
