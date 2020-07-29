@@ -14,15 +14,15 @@ const TabsComponent = (props) => {
     <div>
       <Tabs className='tabs' selectedIndex={tabIndex} onSelect={tabIndex=>setTabIndex(tabIndex)}>
         <TabList className='tab-nav-container'>
-          <Tab className={`${tabIndex === 0? 'active': null}`}>
+          <Tab className={`${tabIndex === 0? 'tab-selected active': null}`}>
             <ImageDoor />{' '}
-            <p><strong>No commitments <br/> cancel online at anytime</strong></p>
+            <p style={{marginBottom:'1.875rem'}}><strong>No commitments <br/> cancel online at anytime</strong></p>
           </Tab>
-          <Tab className={`${tabIndex === 1? 'active': null}`}>
+          <Tab className={`${tabIndex === 1? 'tab-selected active': null}`}>
             <DeviceImage />
             <p style={{marginTop:"-5.3125rem"}}><strong>Watch anywhere</strong></p>
           </Tab>
-          <Tab className={`${tabIndex === 2? 'active': null}`}>
+          <Tab className={`${tabIndex === 2? 'tab-selected active': null}`}>
             <PriceImage />
             <p><strong>Pick Your Price</strong></p>
           </Tab>
