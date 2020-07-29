@@ -1,5 +1,5 @@
 import React from 'react'
-import Logo from '../svg/logo.svg'
+import logo from '../svg/logo.svg'
 import { NavLink } from 'react-router-dom'
 import styled from 'styled-components'
 
@@ -7,7 +7,7 @@ const Header = props => {
 return (
     <HeaderComponent className='header-container'>
         <div className='header-top'>
-            <img src ={Logo} alt='Logo'/>
+            <Logo src ={logo} alt='Logo'/>
             <NavLink className='signIn-btn' to='/'>Sign In</NavLink>
         </div>
 
@@ -17,6 +17,18 @@ return (
 
 export default Header
 
+//logo
+const Logo = styled.img`
+    width: 10rem;
+    height: 3.5rem;
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+`;
+
+//header 
 const HeaderComponent = styled.div`
 .signIn-btn {
     right: 0;
