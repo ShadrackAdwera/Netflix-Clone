@@ -1,6 +1,6 @@
 import React from 'react'
 import logo from '../svg/logo.svg'
-import { NavLink } from 'react-router-dom'
+import { NavLink, useHistory } from 'react-router-dom'
 import styled from 'styled-components'
 import { Icon } from 'react-icons-kit'
 import {ic_chevron_right} from 'react-icons-kit/md/ic_chevron_right'
@@ -9,6 +9,7 @@ import { Button } from './Button'
 
 
 const Header = props => {
+    const history  = useHistory()
 return (
     <HeaderComponent className='header-container'>
         <div className='header-top'>
@@ -18,7 +19,7 @@ return (
         <div className='header-content'>
             <Title>See what's next</Title>
             <Subtitle>WATCH ANYWHERE. CANCEL ANYTIME</Subtitle>
-            <Button style={{marginBottom:'10%'}} className='main-offer-btn' primary>TRY IT NOW <Icon className='Icon' icon={ic_chevron_right} size={40}/> </Button>
+            <Button style={{marginBottom:'10%'}} className='main-offer-btn' primary onClick={()=> history.push('/plan')}>TRY IT NOW <Icon className='Icon' icon={ic_chevron_right} size={40}/> </Button>
         </div>
 
     </HeaderComponent>

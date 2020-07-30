@@ -15,11 +15,11 @@ const Footer = () => {
     }
 return (
     <FootedContainer>
-        <span style={{marginLeft:'17%', fontSize:'1.125rem'}}>Questions? <Link>Call +254-7130-65-110</Link></span>
+        <span style={{marginLeft:'17%', fontSize:'1.125rem'}}>Questions? <Link to='/'>Call +254-7130-65-110</Link></span>
         <div className='footer-columns'>
         <ul>
             <li>
-                <Link>FAQ</Link>
+                <Link to='/'>FAQ</Link>
             </li>
             <li>
                 <Link to='/'>Investor Relations</Link>

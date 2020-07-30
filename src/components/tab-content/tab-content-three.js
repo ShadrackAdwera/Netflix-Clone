@@ -1,4 +1,5 @@
 import React from 'react';
+import { useHistory } from 'react-router-dom'
 import styled from 'styled-components';
 import { Icon } from 'react-icons-kit';
 import { ic_done } from 'react-icons-kit/md/ic_done';
@@ -7,6 +8,7 @@ import { generateMedia } from 'styled-media-query';
 import { Button } from '../Button';
 
 const TabContentThree = () => {
+  const history = useHistory()
   return (
     <TabContainer>
       <div className="tab-content">
@@ -14,7 +16,7 @@ const TabContentThree = () => {
           <span style={{ fontSize: '1.5rem' }}>
             Chose one plan and watch everything on Netflix
           </span>
-          <Button className="btn">Try It Now</Button>
+          <Button className="btn" onClick={()=> history.push('/plan')}>Try It Now</Button>
         </div>
         <div className="tab-bottom-content">
           <table>

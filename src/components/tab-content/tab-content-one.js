@@ -1,10 +1,13 @@
 import React from 'react'
 import styled from 'styled-components'
+import { useHistory } from 'react-router-dom'
 import { generateMedia } from "styled-media-query";
 import TabOneImage from '../../images/tab-1-pic.png'
 import { Button } from '../Button'
 
 const TabContentOne = props => {
+    const history = useHistory()
+
 return (
     <TabContentContainer>
         <div className='container'>
@@ -14,7 +17,7 @@ return (
                     If you decide Netflix isn't for you - No problem, No commitment. Cancel online anytime. 
                 </span>
                 <br/>
-                <Button style={{marginTop:'1rem'}}>Try it now</Button>
+                <Button style={{marginTop:'1rem'}} onClick={()=> history.push('/plan')}>Try it now</Button>
                 </div>
                 <img src = {TabOneImage} alt='Tab One'/>
             </div>

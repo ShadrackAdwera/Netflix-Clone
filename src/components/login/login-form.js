@@ -67,7 +67,7 @@ return <FormContainer>
             <br />
             <br />
             <span style={{color:'#999'}}>New to Netflix?</span> &nbsp;
-            <Link to='/sign-up' className='sign-up-text'>Sign Up Now</Link>
+            <Link to='/' className='sign-up-text'>Sign Up Now</Link>
         </div>
     </form>
 </div>
@@ -128,7 +128,7 @@ const FormContainer = styled.div`
         left: 0.25rem;
         pointer-events: none;
         color: #8a8a8a;
-        font-size: 1rem;
+        font-size: 0.8rem;
         transition: transform 150ms ease-out, font-size 150ms ease-out;
     }
 

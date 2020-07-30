@@ -1,18 +1,21 @@
 import React from 'react'
-import { Button } from '../Button'
+import { useHistory } from 'react-router-dom'
 import styled from 'styled-components'
 import { generateMedia } from "styled-media-query";
 import TvImage from '../../images/tab-tv.png'
 import TabletImage from '../../images/tab-tablet.png'
 import MacbookImage from '../../images/tab-macbook.png'
+import { Button } from '../Button'
 
 const TabContentTwo = () => {
+
+    const history = useHistory()
 return (
     <TabContainer>
         <div className='tab-content'>
             <div className='tab-top-content'>
                 <span style={{fontSize:'1.5rem'}}> Watch TV Shows and Movies anytime, anywhere - personalized for you</span>
-                <Button className='btn'>Try it Now</Button>
+                <Button className='btn' onClick={()=> history.push('/plan')}>Try it Now</Button>
                 </div>
                 <div className='tab-bottom-content'>
                     <div>
