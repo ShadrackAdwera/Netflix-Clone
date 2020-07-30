@@ -1,8 +1,17 @@
-import React from 'react'
+import React, { useState} from 'react'
 import { Link } from 'react-router-dom'
 import styled from 'styled-components'
+import { Icon } from 'react-icons-kit'
+import {ic_arrow_drop_down} from 'react-icons-kit/md/ic_arrow_drop_down'
+import {ic_language} from 'react-icons-kit/md/ic_language'
 
 const Footer = () => {
+    const [langContent, setLangContent] = useState(false)
+
+    const handleClick = e => {
+        e.preventDefault()
+        setLangContent(!langContent)
+    }
 return (
     <FootedContainer>
         <span style={{marginLeft:'17%', fontSize:'1.125rem'}}>Questions? <Link>Call +254-7130-65-110</Link></span>
@@ -66,7 +75,21 @@ return (
                 <Link to='/'>Legal Notices</Link>
             </li>
         </ul>
+        <div className='language-btn' onClick={handleClick}>
+        <Icon icon={ic_language} size={20}/>
+        &nbsp;&nbsp;English&nbsp;&nbsp;
+        <Icon icon={ic_arrow_drop_down} />
         </div>
+        </div>
+        {langContent && <div className='language-toggle'>
+        <ul>
+            <li>English</li>
+        </ul>
+        <ul>
+            <li>Sheng'</li>
+        </ul>
+        </div>}
+        <span style={{marginLeft:'17%', fontSize:'0.9rem'}}>Netflix Mbogi Genje</span>
     </FootedContainer>
 )
 }
@@ -97,5 +120,33 @@ const FootedContainer = styled.footer`
     a:hover {
         text-decoration: underline;
         cursor: pointer;
+    }
+    .language-btn {
+        background: transparent;
+        border: 0.9px solid #333;
+        padding: 1rem;
+        width: 8rem;
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+        margin-left: 10%;
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+        cursor: pointer;
+        
+    }
+    .language-toggle {
+        margin-left: 17%;
+        position: absolute;
+        margin-top: -2rem;
+    }
+    .language-toggle ul {
+        background: var(--main-deep-dark);
+        width: 8.125rem;
+        border: 1px solid #333;
+        text-align: center;
+        &:hover {
+            background: #0085ff;
+            color: white;
+        }
     }
 `;
