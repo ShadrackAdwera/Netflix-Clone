@@ -1,27 +1,63 @@
-import React from 'react'
+/* eslint-disable no-useless-escape */
+import React, { useState } from 'react'
 import styled from 'styled-components'
 import { Link } from 'react-router-dom'
+import { generateMedia } from 'styled-media-query';
 import FbLogin from '../../images/fb-logo.png'
 
 const LoginForm = () => {
+
+    const [email,setEmail] = useState('');
+    const [password, setPassword] = useState('')
+    // const [emailError, setEmailError] = useState('')
+    // const [isValidEmail, setIsValidEmail] = useState(false)
+    // const [passwordError, setPasswordError] = useState('')
+    // const [isValidPw, setIsValidPw] = useState(false)
+    const [isChecked, setIsChecked] = useState(true)
+
+    // const validateEmail = () => {
+    //     const emailRegex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    //     setIsValidEmail(true)
+    //     if (email && !emailRegex.test(email.toLowerCase())) {
+    //         setIsValidEmail(false)
+    //         setEmailError(<span style={{color:'red'}}>
+    //             Please input a valid email address
+    //         </span>)
+    //       }
+    //       return isValidEmail
+    // }
+
+    // const validatePassword = () => {
+    //     setIsValidPw(true)
+    //     if(password.length<=5) {
+    //         setIsValidPw(false)
+    //         setPasswordError(<span>
+    //             Check Password Length
+    //         </span>)
+    //     }
+    //     return isValidPw
+    // }
+
+    
+
 return <FormContainer> 
 <div className='form-container'>
     <form>
         <h1>Sign In</h1>
         <div className='input-container'>
-            <input className='input-empty' type='email' name='email' id='email' required/>
+            <input className='input-empty' type='email' name='email' id='email' required value={email} onChange={e=>setEmail(e.target.value)}/>
             <label>Email or Phone Number *</label>
         </div>
         <div className='input-container'>
-            <input className='input-empty' type='password' name='current-password' id='current-password' required/>
+            <input className='input-empty' type='password' name='current-password' id='current-password' required value={password} onChange={e=>setPassword(e.target.value)}/>
             <label>Password *</label>
         </div>
         <div className='input-container'>
-            <Button type='submit' href='/'>Sign In</Button>
+            <Button type='submit' onClick={()=>email.length>5 && password.length>5 && alert(`It is just but a clone ${email.split('@')[0]}, dont expect to Netflix and Chill here ;-)`)}>Sign In</Button>
         </div>
         <label className='checkbox-container'>
             Remember me
-            <input type='checkbox' checked/>
+            <input type='checkbox' defaultChecked={isChecked} onChange={e=>setIsChecked(e.target.checked)} />
             <span className='checkmark'></span>
         </label>
         <Link to='/' className='need-help'>Need Help?</Link>
@@ -40,12 +76,23 @@ return <FormContainer>
 
 export default LoginForm
 
+//Media Queries
+const customMedia = generateMedia({
+    tablet: '640px',
+  });
+
+
+
 //Form COntainer
 const FormContainer = styled.div`
     display: grid;
     justify-content: center;
     position: relative;
     z-index: 5;
+    ${customMedia.lessThan('tablet')`
+    border-bottom: 0.9px solid #000;
+
+        `}
 
     .form-container {
         background: rgba(0,0,0,0.8);
@@ -53,6 +100,13 @@ const FormContainer = styled.div`
         width: 28.125rem;
         height: 41.25rem;
         padding: 4rem;
+        ${customMedia.lessThan('tablet')`
+        padding: 4.785rem;
+        height: 35rem;
+        margin-left: 5%;
+        margin-right: 5%;
+        width: 90%;
+        `}
 
     }
     .input-container {
@@ -71,7 +125,7 @@ const FormContainer = styled.div`
     form div label {
         position: absolute;
         top: 0.625rem;
-        left: 1.25rem;
+        left: 0.25rem;
         pointer-events: none;
         color: #8a8a8a;
         font-size: 1rem;
@@ -127,6 +181,9 @@ const FormContainer = styled.div`
         color: #828282;
         margin-left: 6.6rem;
         font-size: 0.9rem;
+        ${customMedia.lessThan('tablet')`
+        margin-left: 13rem
+        `}
     }
     .bottom-form img {
         width: 1.5625rem;

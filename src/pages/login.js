@@ -1,7 +1,9 @@
 import React from 'react'
 import styled from 'styled-components'
+import { generateMedia } from 'styled-media-query';
 import logo from '../svg/logo.svg'
 import LoginForm from '../components/login/login-form'
+import LoginFooter from '../components/login/login-footer'
 
 const Login = () => {
     return <div className='main-login-container'>
@@ -9,10 +11,16 @@ const Login = () => {
         <Logo src={logo} alt='logo' className='logo'/>
         </div>
         <LoginForm />
+        <LoginFooter />
     </div>
 }
 
 export default Login 
+
+const customMedia = generateMedia({
+    tablet: '640px',
+    lgTablet: '740px'
+})
 
 const Logo = styled.img`
     width: 11rem;
@@ -21,6 +29,10 @@ const Logo = styled.img`
     left: 11%;
     transform: translate(-50%, -50%);
     margin-left: 0;
+    ${customMedia.lessThan('tablet')`
+    top: 45%;
+    left: 28%
+        `}
 
 
 `;
