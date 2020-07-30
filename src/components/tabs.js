@@ -5,6 +5,7 @@ import DeviceImage from '../components/tabs-navigation/tab-devices';
 import PriceImage from '../components/tabs-navigation/tab-price';
 import TabContentOne from '../components/tab-content/tab-content-one'
 import TabContentTwo from '../components/tab-content/tab-content-two'
+import TabContentThree from '../components/tab-content/tab-content-three'
 import '../styles/TabsNav.css';
 
 const TabsComponent = (props) => {
@@ -34,6 +35,9 @@ const TabsComponent = (props) => {
         </TabPanel>
         <TabPanel>
             <TabContentTwo/>
+        </TabPanel>
+        <TabPanel>
+            <TabContentThree/>
         </TabPanel>
       </Tabs>
     </div>
