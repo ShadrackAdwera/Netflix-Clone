@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import { Link } from 'react-router-dom'
+import FbLogin from '../../images/fb-logo.png'
 
 const LoginForm = () => {
 return <FormContainer> 
@@ -9,11 +10,11 @@ return <FormContainer>
         <h1>Sign In</h1>
         <div className='input-container'>
             <input className='input-empty' type='email' name='email' id='email' required/>
-            <label>Email or Phone Number</label>
+            <label>Email or Phone Number *</label>
         </div>
         <div className='input-container'>
             <input className='input-empty' type='password' name='current-password' id='current-password' required/>
-            <label>Password</label>
+            <label>Password *</label>
         </div>
         <div className='input-container'>
             <Button type='submit' href='/'>Sign In</Button>
@@ -24,6 +25,14 @@ return <FormContainer>
             <span className='checkmark'></span>
         </label>
         <Link to='/' className='need-help'>Need Help?</Link>
+        <div className='bottom-form'>
+            <img src={FbLogin} alt='fb'/>
+            <Link to='/' className='fb-login-text'>Login With Facebook</Link>
+            <br />
+            <br />
+            <span style={{color:'#999'}}>New to Netflix?</span> &nbsp;
+            <Link to='/sign-up' className='sign-up-text'>Sign Up Now</Link>
+        </div>
     </form>
 </div>
 </FormContainer>
@@ -86,6 +95,7 @@ const FormContainer = styled.div`
         padding-left: 1.875rem;
         position: relative;
         font-size: 0.9rem;
+        color: #999;
         cursor: pointer;
     }
     .checkbox-container input {
@@ -112,6 +122,33 @@ const FormContainer = styled.div`
         left: 21%;
         transform: rotate(-45deg)
     }
+    .need-help {
+        text-decoration: none;
+        color: #828282;
+        margin-left: 6.6rem;
+        font-size: 0.9rem;
+    }
+    .bottom-form img {
+        width: 1.5625rem;
+        margin: 0.625rem 0.625rem -0.4375rem 0; 
+    }
+    .fb-login-text {
+        color: #828282;
+        font-size: 0.9rem;
+    }
+    .bottom-form {
+        position: absolute;
+        bottom: 0;
+        margin-bottom: 4rem;
+    }
+    .sign-up-text {
+        font-size: 1.1rem;
+        color: #fff;
+        &:hover {
+            text-decoration: underline
+        }
+    }
+
 `;
 
 const Button = styled.button`
