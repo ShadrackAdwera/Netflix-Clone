@@ -4,6 +4,7 @@ import { NavLink } from 'react-router-dom'
 import styled from 'styled-components'
 import { Icon } from 'react-icons-kit'
 import {ic_chevron_right} from 'react-icons-kit/md/ic_chevron_right'
+import { generateMedia } from "styled-media-query";
 import { Button } from './Button'
 
 
@@ -26,6 +27,13 @@ return (
 
 export default Header
 
+const customMedia = generateMedia({
+    lgDesktop: '1350px',
+    mdDesktop:'1150px',
+    tablet: '960px',
+    smTablet: '740px'
+}) 
+
 //logo
 const Logo = styled.img`
     width: 10rem;
@@ -34,11 +42,22 @@ const Logo = styled.img`
     top: 25%;
     left: 50%;
     transform: translate(-50%, -50%);
-
+    ${customMedia.lessThan('tablet')`
+    left: 15%;
+    `}
 `;
 
 //header 
 const HeaderComponent = styled.div`
+
+.Icon svg {
+    vertical-align: bottom;
+    margin-left: 1.5rem;
+    ${customMedia.lessThan('smTablet')`
+    display: none !important;
+    `}
+}
+
 .signIn-btn {
     right: 0;
     margin: 1.125rem 3% 0;
@@ -55,6 +74,10 @@ const HeaderComponent = styled.div`
     &:hover {
         background: var(--main-dark)
     }
+    ${customMedia.lessThan('smTablet')`
+    margin-top: 1.25rem;
+    right: 5%
+    `}
 }
 //headertop
     .header-top {
@@ -75,9 +98,21 @@ const HeaderComponent = styled.div`
         flex-direction: column;
         z-index: 1
     }
-    .Icon svg {
-        vertical-align: bottom;
-        margin-left: 1.5rem
+
+    .main-offer-btn {
+        ${customMedia.lessThan('lgDesktop')`
+        margin: 0 33%;
+        font-size: 1.5rem;
+
+        `}
+        ${customMedia.lessThan('mdDesktop')`
+        margin: 0 25%;
+        font-size: 1.5rem;
+        `}
+        ${customMedia.lessThan('tablet')`
+        margin: 0 20%;
+        font-size: 1.3rem;
+        `}
     }
 `
 
