@@ -13,7 +13,7 @@ return (
     <HeaderComponent className='header-container'>
         <div className='header-top'>
             <Logo src ={logo} alt='Logo'/>
-            <NavLink className='signIn-btn' to='/'>Sign In</NavLink>
+            <NavLink className='signIn-btn' to='/sign-in'>Sign In</NavLink>
         </div>
         <div className='header-content'>
             <Title>See what's next</Title>
