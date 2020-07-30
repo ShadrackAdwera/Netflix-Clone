@@ -4,6 +4,7 @@ import styled from 'styled-components'
 import { Icon } from 'react-icons-kit'
 import {ic_arrow_drop_down} from 'react-icons-kit/md/ic_arrow_drop_down'
 import {ic_language} from 'react-icons-kit/md/ic_language'
+import { generateMedia } from "styled-media-query";
 
 const Footer = () => {
     const [langContent, setLangContent] = useState(false)
@@ -96,6 +97,11 @@ return (
 
 export default Footer
 
+//Media Queries
+const customMedia = generateMedia({
+    tablet: '740px'
+})
+
 const FootedContainer = styled.footer`
     background: var(--main-deep-dark);
     padding-top: 10rem;
@@ -109,6 +115,9 @@ const FootedContainer = styled.footer`
         overflow: auto;
         display: grid;
         grid-template-columns: repeat(4, 1fr);
+        ${customMedia.lessThan('tablet')`
+        grid-template-columns: repeat(2, 1fr);
+        `} 
     }
     ul li{
         list-style: none;
