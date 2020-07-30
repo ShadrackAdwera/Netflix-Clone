@@ -18,7 +18,7 @@ return (
         <div className='header-content'>
             <Title>See what's next</Title>
             <Subtitle>WATCH ANYWHERE. CANCEL ANYTIME</Subtitle>
-            <Button className='main-offer-btn' primary>TRY IT NOW <Icon className='Icon' icon={ic_chevron_right} size={40}/> </Button>
+            <Button style={{marginBottom:'10%'}} className='main-offer-btn' primary>TRY IT NOW <Icon className='Icon' icon={ic_chevron_right} size={40}/> </Button>
         </div>
 
     </HeaderComponent>
@@ -43,7 +43,7 @@ const Logo = styled.img`
     left: 50%;
     transform: translate(-50%, -50%);
     ${customMedia.lessThan('tablet')`
-    left: 15%;
+    left: 25%;
     `}
 `;
 
