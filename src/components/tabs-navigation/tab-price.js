@@ -4,7 +4,6 @@ const TabPrice = (props) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      class="icon-price-tag"
       className='tab-icon-price'
       viewBox="0 0 63 48"
       focusable="true"
