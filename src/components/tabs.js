@@ -19,15 +19,20 @@ const TabsComponent = (props) => {
         <TabList className='tab-nav-container'>
           <Tab className={`${tabIndex === 0? 'tab-selected active': null}`}>
             <ImageDoor />{' '}
-            <p style={{marginBottom:'1.875rem'}}><strong>No commitments <br/> cancel online at anytime</strong></p>
+            <p className='lg-screen' style={{marginBottom:'1.875rem'}}><strong>No commitments <br/> cancel online at anytime</strong></p>
+            <br/>
+            <span className='md-screen' style={{marginTop:'0.4rem'}}>Cancel</span>
           </Tab>
           <Tab className={`${tabIndex === 1? 'tab-selected active': null}`}>
             <DeviceImage />
-            <p style={{marginTop:"-5.3125rem"}}><strong>Watch anywhere</strong></p>
+            <p className='lg-screen' style={{marginTop:"-5.3125rem"}}><strong>Watch anywhere</strong></p>
+            <span className='md-screen' style={{marginTop:'-3.7125rem'}}>Devices</span>
           </Tab>
           <Tab className={`${tabIndex === 2? 'tab-selected active': null}`}>
             <PriceImage />
-            <p><strong>Pick Your Price</strong></p>
+            <p className='lg-screen'><strong>Pick Your Price</strong></p>
+            <br/>
+            <span className='md-screen'>Price</span>
           </Tab>
         </TabList>
         <TabPanel>

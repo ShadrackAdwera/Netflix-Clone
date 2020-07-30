@@ -1,57 +1,96 @@
 /* Door Tab Nav */
 
 .tab-icon-door {
-    width: 2.8125rem;
-    height: 2.8125rem;
-    fill: var(--main-grey);
+  width: 2.8125rem;
+  height: 2.8125rem;
+  fill: var(--main-grey);
 }
+
+/* Media Query Tab Nav 1 */
+@media (max-width: 900px) {
+  .tab-icon-door {
+    width: 2.4rem;
+    height: 2.4rem;
+  }
+}
+
 .tab-icon-devices {
-    width: 9.6875rem;
-    height: 9.6875rem;
-    fill: var(--main-grey);
+  width: 9.6875rem;
+  height: 9.6875rem;
+  fill: var(--main-grey);
+}
+
+/* Media Query Tab Nav 2 */
+@media (max-width: 900px) {
+  .tab-icon-devices {
+    width: 6.7rem;
+    height: 6.7rem;
+  }
 }
 .tab-icon-price {
-    width: 4.375rem;
-    height: 4.375rem;
-    fill: var(--main-grey);
+  width: 4.375rem;
+  height: 4.375rem;
+  fill: var(--main-grey);
+}
+
+/* Media Query Tab Nav 3 */
+@media (max-width: 900px) {
+  .tab-icon-price {
+    width: 2.4rem;
+    height: 2.4rem;
+  }
 }
 .tabs {
-    padding-top: 1rem;
+  padding-top: 1rem;
 }
 .tab-nav-container {
-    display: grid;
-    justify-content: center;
-    align-content: center;
-    text-align: center;
-    grid-template-columns: repeat(3, 1fr);
-    grid-gap: 1rem;
-    list-style: none;
-    color: var(--main-grey);
-    margin: 0 12%;
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  text-align: center;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 1rem;
+  list-style: none;
+  color: var(--main-grey);
+  margin: 0 12%;
 }
 
 /* hover effect on the tab navs */
 
 ul li:hover {
-    color: white;
-    cursor: pointer;
+  color: white;
+  cursor: pointer;
 }
 
 ul li:hover svg path {
-    fill: white;
+  fill: white;
 }
 
 /* color on the active nav */
 .active {
-    border-bottom: 4px solid var(--main-red);
+  border-bottom: 4px solid var(--main-red);
 }
 
 .tab-selected {
-    color: white;
+  color: white;
 }
 
 .tab-selected svg path {
-    fill: white;
+  fill: white;
 }
 
+@media (min-width: 900px) {
+  .md-screen {
+    display: none;
+  }
+}
+@media (max-width: 900px) {
+  .lg-screen {
+    display: none;
+  }
+  .md-screen {
+      display: block;
+    margin-bottom: 0.4rem;
 
+  }
+}

@@ -8,7 +8,7 @@ export const Button = styled.button`
   border: none;
   outline: none;
   margin: ${props => props.primary? '0 35%' : '0'};
-  padding: ${props=>props.primary? '1.5rem' : '0.8rem 1.3rem'};
+  padding: ${props=>props.primary? '1.2rem' : '0.8rem 1.1rem'};
   border-radius: 0.1875rem;
   font-size: ${props=>props.primary? '2rem' : '1rem'};
   text-align: center;
