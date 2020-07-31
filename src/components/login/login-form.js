@@ -1,5 +1,6 @@
 /* eslint-disable no-useless-escape */
 import React, { useState } from 'react'
+import { useHistory } from 'react-router-dom'
 import styled from 'styled-components'
 import { Link } from 'react-router-dom'
 import { generateMedia } from 'styled-media-query';
@@ -9,6 +10,7 @@ const LoginForm = () => {
 
     const [email,setEmail] = useState('');
     const [password, setPassword] = useState('')
+    const history = useHistory()
     // const [emailError, setEmailError] = useState('')
     // const [isValidEmail, setIsValidEmail] = useState(false)
     // const [passwordError, setPasswordError] = useState('')
@@ -53,7 +55,7 @@ return <FormContainer>
             <label>Password *</label>
         </div>
         <div className='input-container'>
-            <Button type='submit' onClick={()=>email.length>5 && password.length>5 && alert(`It is just but a clone ${email.split('@')[0]}, dont expect to Netflix and Chill here ;-)`)}>Sign In</Button>
+            <Button type='submit' onClick={()=>email.length>5 && password.length>5 && history.push('/profile')}>Sign In</Button>
         </div>
         <label className='checkbox-container'>
             Remember me
