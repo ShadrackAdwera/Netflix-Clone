@@ -1,4 +1,5 @@
 import React from 'react'
+import { useHistory } from 'react-router-dom'
 import styled from 'styled-components'
 import { generateMedia } from 'styled-media-query';
 import logo from '../svg/logo.svg'
@@ -6,9 +7,10 @@ import LoginForm from '../components/login/login-form'
 import LoginFooter from '../components/login/login-footer'
 
 const Login = () => {
+    const history = useHistory()
     return <div className='main-login-container'>
         <div className='header-top'>
-        <Logo src={logo} alt='logo' className='logo'/>
+        <Logo src={logo} alt='logo' className='logo' onClick={()=>history.push('/')}/>
         </div>
         <LoginForm />
         <LoginFooter />

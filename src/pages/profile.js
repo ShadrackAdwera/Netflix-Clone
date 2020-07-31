@@ -1,5 +1,6 @@
 import React from 'react'
 import { useHistory } from 'react-router-dom'
+import { generateMedia } from 'styled-media-query'
 import styled from 'styled-components'
 import logo from '../svg/logo.svg'
 
@@ -8,7 +9,7 @@ const Profile = () => {
     return <ProfileContainer>
         <Logo src={logo} alt='logo' onClick={()=>history.push('/')}/>
         <div className='profile-content'>
-            <div style={{textAlign:'center'}}>
+            <div style={{textAlign:'center'}} className='sm-title'>
         <span className='title'>
             Who's Watching?
         </span>
@@ -55,12 +56,36 @@ const Profile = () => {
 
 export default Profile;
 
+const customMedia = generateMedia({
+    lgDesktop: '1350px',
+    mdDesktop:'1150px',
+    tablet: '960px',
+    smTablet: '740px'
+})
+
 const ProfileContainer = styled.div`
 
 .profile-container {
-    display: flex;
-    flex-direction: row;
-    margin-left: 15%
+    display: grid;
+        grid-gap: 2rem;
+        text-align: center;
+        margin-top: 2rem;
+        margin-left: 20%;
+        grid-template-columns: repeat(12, 1fr);
+        ${customMedia.lessThan('lgDesktop')`
+        grid-template-columns: repeat(2, 1fr);
+        margin-top: 2rem;
+        `}
+        ${customMedia.lessThan('smTablet')`
+        grid-template-columns: repeat(2, 1fr);
+        margin-top: 2rem;
+        `}
+        ${customMedia.lessThan('tablet')`
+        grid-template-columns: repeat(3, 1fr);
+        text-align: center;
+        margin-left: 2%;
+        margin-right: 2%
+        `}
 }
 
     .profile-content {
@@ -68,14 +93,20 @@ const ProfileContainer = styled.div`
         position: relative;
         margin: auto;
         margin-top: 12%;
-        z-index: 2
+        z-index: 2;
+        ${customMedia.lessThan('tablet')`
+        font-size: 1.0rem;
+        margin-top: 50%;
+        `}
     }
-    .profile {
-        margin: 1.5rem 1.5rem 1.5rem 1.5rem;
-    }
+    
     .profile-name {
         font-size: 1.875rem;
         color: #999;
+        ${customMedia.lessThan('tablet')`
+        font-size: 1.0rem;
+        `}
+        
     }
     img {
         width: 12.875rem;
@@ -86,11 +117,19 @@ const ProfileContainer = styled.div`
         &:hover {
             cursor: pointer;
             transform: scale(1.2);
-
         }
+        ${customMedia.lessThan('tablet')`
+        width: 5.875rem;
+        height: 5.875rem;
+        `}
+
     }
     .title {
         font-size: 4.345rem;
+        ${customMedia.lessThan('tablet')`
+        font-size: 1.845rem;
+        margin-top: 5%;
+        `}
     }
     .manage-profiles {
     margin: 16px auto;
@@ -105,6 +144,10 @@ const ProfileContainer = styled.div`
         color: white;
         cursor: pointer;
     }
+    ${customMedia.lessThan('tablet')`
+        width: 80%;
+        font-size: 1.0rem;
+        `}
     }
 `;
 
@@ -115,5 +158,15 @@ top: 10%;
 left: 10%;
 transform: translate(-50%, -50%);
 margin-left: 0;
+${customMedia.lessThan('tablet')`
+top: 5%;
+left: 15%;
+width: 7rem;
+`}
+${customMedia.lessThan('mdDesktop')`
+top: 5%;
+left: 15%;
+width: 7rem;
+`}
 `;
 
